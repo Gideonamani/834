@@ -31,7 +31,6 @@ body {
 
 span#auth-status {
     padding: 10px 15px;
-    display: -moz-groupbox;
 }
 
 span#inside-app {
