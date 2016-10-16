@@ -1,11 +1,3 @@
-$('.grid').masonry({
-  itemSelector: '.grid-item',
-  columnWidth: 275,
-  stagger: 30,
-  gutter: 8,
-  isFitWidth: true
-});
-
 
 Date.prototype.getWeek = function () {
     var target  = new Date(this.valueOf());
