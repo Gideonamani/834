@@ -39,6 +39,19 @@
 				padding: 10px 15px;
 				display: block;
 			}
+			.col-xs-12.hide-this .wrap{
+				display: none;
+			}
+			@media (max-width: 767px) {
+			    .xs-hidden .wrap {
+			        display: none;
+			    }
+			}
+			@media (min-width: 768px) {
+			    .xs-hidden .wrap {
+			        display: block;
+			    }
+			}
 		</style>
 	</head>
 	<body style="position: relative; padding-top: 70px;" data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
@@ -274,16 +287,17 @@
 					<p>Во первое.. почему столько вопросов? Во второе, тут все информации будет в понятном информации (или скорее всего стримляется к этом). Так что если у тебя какое то важное информации и рекоммендации или видешь что, что то не хватает; пожалуйста сделайте пул-реквест.</p>
 					
 				</div>
-				<div class="col-md-3  col-sm-4 col-xs-12">
+				<div class="col-md-3  col-sm-4 xs-hidden">
 					<div class="wrap">
 
-					<script type="text/javascript" src="//vk.com/js/api/openapi.js?130"></script>
+						<!-- <script type="text/javascript" src="//vk.com/js/api/openapi.js?130" async></script> -->
 
-					<!-- VK Widget -->
-					<div id="vk_groups" style="margin: 0 auto"></div>
-					<script type="text/javascript">
-					VK.Widgets.Group("vk_groups", {mode: 3, width: "220", height: "400", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, 58832439);
-					</script>
+						<!-- VK Widget -->
+						<div id="vk_groups" style="margin: 0 auto"></div>
+						<script type="text/javascript" src="//vk.com/js/api/openapi.js?130"></script>
+						<script>
+							VK.Widgets.Group("vk_groups", {mode: 3, width: "220", height: "400", color1: 'FFFFFF', color2: '000000', color3: '5E81A8'}, 58832439);
+						</script>
 
 					</div>
 				</div>
