@@ -4,14 +4,13 @@
 
 var CACHE_NAME = '834-site-cache-v1';
 var urlsToCache = [
-  './',
-  'logo.jpg',
-  './style.css',
-  './main.js',
+  '/',
+  '/logo.jpg',
+  '/style.css',
+  '/main.js',
   '/masonry.pkgd.min.js',
   '/tabletop.js',
   '/UniSem07Timetable.json',
-  '/FlipClock/compiled/flipclock.min.js',
   '/conf/app.js',
   '/conf/auth0-variables.js',
   '/Teachers/BIUSTeacher.jpg',
@@ -23,6 +22,9 @@ var urlsToCache = [
   '/cdn/bootstrapmin.js',
   '/cdn/bootstrap.min.css',
   '/cdn/auth0lock.min.js',
+  '/cdn/flipclock.min.js',
+  '/cdn/flipclock.css',
+  '/index.html',
 ];
 
 // Event listener of what to do when the sw is first registered to the site
