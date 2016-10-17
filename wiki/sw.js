@@ -5,6 +5,7 @@
 var CACHE_NAME = '834-site-cache-v1';
 var urlsToCache = [
   '/',
+  '/manifest.json',
   '/logo.jpg',
   '/style.css',
   '/main.js',
@@ -24,7 +25,16 @@ var urlsToCache = [
   '/cdn/auth0lock.min.js',
   '/cdn/flipclock.min.js',
   '/cdn/flipclock.css',
+  '/cdn/datepicker.js',
+  '/cdn/datepicker.css',
   '/index.html',
+  '/timetable/',
+  '/timetable/index.html',
+  '/timetable/main.js',
+  '/timetable/style.css',
+  '/fonts/glyphicons-halflings-regular.woff2 ',
+  '/fonts/glyphicons-halflings-regular.woff ',
+  '/fonts/glyphicons-halflings-regular.ttf '
 ];
 
 // Event listener of what to do when the sw is first registered to the site
@@ -57,9 +67,9 @@ self.addEventListener('push', function(event) {
 // or do something else otherwise. That's why the two most important events
 // in a sw are fetch and install.
 self.addEventListener('fetch', function(event) {
-  if (event.request.url == 'https://dragon-server.appspot.com/') {
-    return;
-  }
+  // if (event.request.url == 'https://dragon-server.appspot.com/') {
+  //   return;
+  // }
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);

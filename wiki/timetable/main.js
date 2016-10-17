@@ -41,7 +41,7 @@ monthName[11] = "December";
 
 $(document).ready(function(){
   //Populate the classes fields
-  $.getJSON( "UniSem07Timetable.json", fillInTheTimetable);
+  $.getJSON( "../UniSem07Timetable.json", fillInTheTimetable);
 
   function fillInTheTimetable ( data ) {
     var items = [];
