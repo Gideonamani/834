@@ -88,7 +88,7 @@ $(document).ready(function(){
 
           //Append the html and class details for similar stylings like in the wiki
           addDoubleDiv ();
-          $("div.todays-classes div.todays-classes-2:last").append('<h4>This day'+ "'" + 's classes are: </h4>')
+          $("div.todays-classes div.todays-classes-2:last").append('<h4>This day'+ "'" + 's classes are: </h4>');
 
         $( "<ol/>", {
             "class": "todays-subjects",
@@ -170,7 +170,7 @@ $(document).ready(function(){
             var dayOfTheWeek = gtdDate.getDay();
             metaForTheDaysClasses(gtdDate, dayOfTheWeek, weekNumber, '#go-to-date-div .row2', 'removeIcon');
             
-            $.getJSON( "UniSem07Timetable.json", getDaysTimetable);
+            $.getJSON( "../UniSem07Timetable.json", getDaysTimetable);
 
             function getDaysTimetable(data){
 
