@@ -1,0 +1,248 @@
+/*font-family: 'Overlock', cursive;
+font-family: 'Overlock SC', cursive;*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Overlock', cursive;*/
+    font-size: 14pt;
+    color: #00183e;
+    background-color: rgba(248, 248, 248, 0.2);
+}
+
+/*div#timetable-app {
+    display: -webkit-box;
+    overflow: auto;
+}*/
+
+.logo .navbar-brand {
+	display: inline-block;
+}
+
+.logo .navbar-brand img{
+	max-width: 100%;
+	border-radius: 4px;
+	height: 100%;
+	transition: transform 300ms ease-in-out 50ms;
+}
+
+.logo .navbar-brand img:hover{
+	height: 400%;
+	box-shadow: 0px 0px 5px 1px;
+}
+
+.logo a:visited{
+
+}
+
+
+* { box-sizing: border-box; }
+
+/* ---- grid ---- */
+
+.grid {
+  /* center */
+  margin: 5% auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+    width: 275px;
+    /* height: 120px; */
+    float: left;
+    /* background: #D26; */
+    /* border: 2px solid #333; */
+    /* border-color: hsla(0, 0%, 0%, 0.5); */
+    /* border-radius: 5px; */
+}
+
+.row.todays-classes {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    background: #93e7ff;
+    border-radius: 4px;
+    box-shadow: #38b9de 1px 1px 6px 2px;
+}
+
+.row.todays-classes.sunday {
+    background: rgba(76, 214, 150, 0.9);
+}
+.row.todays-classes.saturday {
+    background: rgb(3, 169, 244);
+}
+span#day {
+    text-decoration: underline;
+}
+
+h4.rest-saturday {
+    margin: 3%;
+    text-align: center;
+    font-size: 20pt;
+    color: aqua;
+    border-radius: 5px;
+    padding: 50px 40px;
+    background: #2196F3;
+    box-shadow: #5bb3ff 0px 0px 12px 1px;
+}
+
+
+h4.rest-sunday {
+    margin: 3%;
+    font-size: 20pt;
+    text-align: center;
+    font-weight: 600;
+    color: chartreuse;
+    padding: 50px 40px;
+    background: rgba(33, 199, 62, 0.45);
+    border-radius: 5px;
+}
+
+ol.todays-subjects {
+    padding-left: 0;
+}
+
+li.somo-la-leo {
+    display: list-item;
+    border: solid 1px aquamarine;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 4px;
+    background: rgba(81, 215, 253, 0.56);
+    box-shadow: rgba(0, 0, 0, 0.44) 1px 1px 5px 0.5px;
+    transition: box-shadow 340ms ease-in-out 10ms;
+}
+
+li.somo-la-leo:hover {
+    background: rgba(75, 212, 251, 0.56);
+    box-shadow: aquamarine 1px 1px 4px 0.5px;
+}
+
+p.kuhusu-somo {
+    display: inline-block;
+    word-spacing: 2pt;
+    margin: 0 10px;
+}
+
+p.kuhusu-somo span.bolder {
+    color: #271b3e;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16pt;
+}
+
+li.somo-la-leo.free-para {
+    text-align: center;
+    color: #FFEB3B;
+    background: lightseagreen;
+}
+
+p.kuhusu-somo span.bolder.mwalimu {
+    color: #2e5456;
+}
+
+.put-center {
+  text-align: center;s
+}
+
+a.go-to-full-timetable {
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 10px;
+    transition: all 330ms ease-in-out 10ms;s
+}
+
+a.go-to-full-timetable:hover {
+  background: #7FDBFF;
+  box-shadow: 1px 1px 0px #b2e9ff, 2px 2px 0px #b2e9ff, 3px 3px 0px #b2e9ff, 4px 4px 0px #e5f8ff, 5px 5px 0px white, 6px 6px 0px white, 7px 7px 0px white;
+}
+
+@media screen and (max-width: 450px){
+  span#day{
+    display: block;
+  }
+
+  li.somo-la-leo {
+    font-size: 10pt;
+  }
+
+  p.kuhusu-somo span.bolder {
+    font-size: 12pt;
+  }
+
+}
+hr.separator {
+    margin-bottom: 40px;
+}
+div#go-to-date-div {
+    background: rgba(235,235,250,1);
+    padding: 10px;
+    border-radius: 4px;
+}
+.go-to-date-info h4 {
+    color: #4e4e4e;
+    padding-top: 5px;
+    text-decoration: underline;
+}
+.input-group.date {
+    margin: 20px 10px 20px;
+}
+.col-md-2.put-center {
+    margin: 0;
+    padding: 0;
+    width: 12%;
+}
+.put-center input.btn.btn-info {
+    margin: 20px 0px;
+}
+#go-to-date-div .input-group[class*=col-] {
+    float: left;
+}
+p.issue {
+  background-color: #d5f4fd;
+  text-align: center;
+  margin-top: 20px;
+}
+
+p.issue a {
+    color: #0ba2ea;
+}
+
+p.issue a:hover{
+  color: blue;
+}
+
+
+footer p.proudly{
+	text-align: center;
+}
+
+footer.stay-bottom {
+    margin-top: 20px;
+    padding-top: 5px;
+    background: rgba(236, 236, 236, 0.34);
+}
+
+.no-display {
+    display: none;
+}
+
+.rt {
+    text-align: right;
+    padding: 5px 0px 1px;
+}
+
+.rt .glyphicon {
+    cursor: pointer;
+}

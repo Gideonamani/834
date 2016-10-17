@@ -236,3 +236,31 @@ function removeClassInput() {
   $('.subject-meta').hide();
   $grid.masonry();
 }
+
+
+// Service worker registration
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  }).catch(function(err) {
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+
+// Push notification subscription setup
+navigator.serviceWorker && navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {  
+  serviceWorkerRegistration.pushManager.getSubscription()  
+    .then(function(subscription) {  
+      // subscription will be null or a PushSubscription
+      if (subscription) {
+        console.info('Got existing', subscription);
+        return;  // got one, yay
+      }
+      serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
+        .then(function(subscription) { 
+          console.info('Newly subscribed to push!', subscription);
+        });
+    });
+});
