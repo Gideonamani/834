@@ -294,7 +294,7 @@ $("#mabina-class-input").click(function(){
 });
 
 $("#add-countdowns-button").click(function(){
-	if($(!"#add-countdowns-button").hasClass('no-click')) {
+	if(!$("#add-countdowns-button").hasClass('no-click')) {
 		$("#add-countdowns-modal").modal("show");
 	}
 });
