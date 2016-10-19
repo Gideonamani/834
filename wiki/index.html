@@ -35,6 +35,10 @@
 			        display: block;
 			    }
 			}
+			.grid-item {
+			    margin-top: -64px;
+			    padding-top: 70px;
+			}
 		</style>
 	</head>
 	<body style="position: relative; padding-top: 70px;" data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
@@ -225,7 +229,8 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav navbar-right" role="tablist">
-				    <li><a href="#Home">Список</a></li>
+				    <li><a href="#Home">Home</a></li>
+				    <li><a href="#Spisok">Список</a></li>
 			        <li><a href="#countdowns">Сроки</a></li>
 			        <li><a href="#todays-classes">Расписание</a></li>
 			        <li class="dropdown">
@@ -263,7 +268,7 @@
 		</header>
 
 		<div class="container">
-			<div  class="row">
+			<div  class="row" id="Home">
 				<div class="col-md-9 col-sm-8 col-xs-12 intro-questions">
 					<h4>А что это такое?</h4> 
 					<p>Короче, это место где складываются все материалы и лекции которые мы получаем после каждого занятия. </p>
@@ -290,7 +295,7 @@
 				</div>
 				
 			</div>
-			<div class="row subject-tiles" id="Home">
+			<div class="row subject-tiles" id="Spisok">
 			
 				<div class="col-lg-12 subject-intro">
 					<!-- <div class="dropdown">
@@ -302,10 +307,10 @@
 							<li><a href="#CourseEnglish">Aviation English</a></li>
 						</ul>
 					</div> -->
-					<div class="dropdown" style="text-align: center;">
+					<div class="dropdown" style="text-align: center; z-index: 2">
 						<a style="text-decoration: none;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Список Предметов <span class="caret"></span></a>
 
-						<ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-left: calc((100% - 160px)/2);">
+						<ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-left: calc((100% - 221px)/2);">
 							<li><a href="#CourseEnglish">Авиационный Английский</a></li>
 							<li><a href="#CourseBZhD">БЖД</a></li>
 							<li><a href="#CourseBIUS">БИУС</a></li>
@@ -325,8 +330,8 @@
 
 					<!-- English -->
 
-					<div class="grid-item">
-					    <div class="thumbnail" id="CourseEnglish">
+					<div class="grid-item" id="CourseEnglish">
+					    <div class="thumbnail">
 					    	<h2>Авиационный Английский</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -409,8 +414,8 @@
 
 				    <!-- BZhD -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseBZhD">
+				    <div class="grid-item" id="CourseBZhD">
+					    <div class="thumbnail">
 					    	<h2>БЖД</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -453,8 +458,8 @@
 
 				    <!-- BIUS -->
 
-				    <div class="grid-item">
-				    	<div class="thumbnail" id="CourseBIUS">
+				    <div class="grid-item" id="CourseBIUS">
+				    	<div class="thumbnail">
 					    	<h2>БИУС</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -487,8 +492,8 @@
 
 				    <!-- Kostruktisya AD -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseKAD">
+				    <div class="grid-item" id="CourseKAD">
+					    <div class="thumbnail">
 					    	<h2>Конструкция и Прочность АД</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -522,8 +527,8 @@
 
 				    <!-- Kostruktisya VS -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseKVS">
+				    <div class="grid-item" id="CourseKVS">
+					    <div class="thumbnail">
 					    	<h2>Конструкция и Прочность ВС</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -556,8 +561,8 @@
 
 				    <!-- Metodi Diagnostiki -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseMCD">
+				    <div class="grid-item" id="CourseMCD">
+					    <div class="thumbnail">
 					    	<h2>Методы Современных Диагностики</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -590,8 +595,8 @@
 
 				    <!-- Teoriya AD -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseTAD">
+				    <div class="grid-item" id="CourseTAD">
+					    <div class="thumbnail">
 					    	<h2>Теория АД</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">
@@ -624,8 +629,8 @@
 
 				    <!-- Teoriya Nadezhnosti -->
 
-				    <div class="grid-item">
-					    <div class="thumbnail" id="CourseTN">
+				    <div class="grid-item" id="CourseTN">
+					    <div class="thumbnail">
 					    	<h2>Теория Надежности</h2>
 					    	<div>
 					    		<div class="subject-meta" style="display: none;">

@@ -192,7 +192,7 @@ div .thumbnail a.to-github:hover{
 }
 
 /*For scrolling purposes*/
-div#Home, div#countdowns , div#todays-classes {
+div#Home, div#Spisok, div#countdowns , div#todays-classes {
     margin-top: -64px;
     padding-top: 70px;
 }
