@@ -29,10 +29,10 @@ body {
 
 }
 
-li.no-click#mabina-class-input {
+button.no-click#add-countdowns-button, li.no-click#mabina-class-input {
   cursor: not-allowed;
 }
-li#mabina-class-input {
+button#add-countdowns-button, li#mabina-class-input {
   cursor: pointer;
 }
 
@@ -182,7 +182,7 @@ div .thumbnail a.to-github:hover{
 }
 
 .class-list .panel .panel-body button {
-  width: 51.7px;
+  width: 50px;
   padding: 5px 2px;
   margin-bottom: 2px;
 }

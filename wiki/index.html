@@ -200,13 +200,33 @@
 		    </div>
 		  </div>
 		</div>
-		<!-- <script>
+		
+		<div class="modal fade" tabindex="-1" role="dialog" id="add-countdowns-modal">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Add the date and time for the new deadline</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form action="post" accept-charset="utf-8">
+					<label for="">
+						<input type="date" name="" >
+					</label>
+					<label for="">
+						<input type="time" name="" >
+					</label>
+		        </form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
-		</script> -->
-		<!-- Button trigger modal -->
-		<!-- <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">Model Popup</button> -->
 
-		<!-- <button type="button" class="btn btn-default navbar-btn">Mabina </button> -->
 
 		<!-- End of model content -->
 		
@@ -742,6 +762,9 @@
 			    			<li>Something</li>
 			    		</ul> <hr>
 			    	</div>
+			    	<div id="add-countdowns" style="text-align: right;">
+						<button type="button" id="add-countdowns-button" class="no-click">Add a new deadline</button>
+					</div>
 			    </div>
 		    </div>
 

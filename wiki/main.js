@@ -293,30 +293,22 @@ $("#mabina-class-input").click(function(){
 	}
 });
 
-
-// $('#myModal').on('show.bs.modal', function (event) {
-//   var link = $(event.relatedTarget);
-//  if(link.hasClass('no-click')) {
-//   	console.log(event);
-//   	event.stopImmediatePropagation();
-//     event.stopPropagation();
-// 		if ( event.isPropagationStopped() ) {
-// 		    msg = "called";
-// 		  } else {
-// 		    msg = "not called";
-// 		  }
-//   }
-//   console.info(msg);
-// });
+$("#add-countdowns-button").click(function(){
+	if($(!"#add-countdowns-button").hasClass('no-click')) {
+		$("#add-countdowns-modal").modal("show");
+	}
+});
 
 function showClassInput() {
   $('#mabina-class-input').removeClass('no-click');
+  $('#add-countdowns-button').removeClass('no-click');
   $('.subject-meta').show();
   $grid.masonry();
 }
 
 function removeClassInput() {
   $('#mabina-class-input').addClass('no-click');
+  $('#add-countdowns-button').addClass('no-click');
   $('.subject-meta').hide();
   $grid.masonry();
 }
