@@ -29,6 +29,13 @@ body {
 
 }
 
+li.no-click#mabina-class-input {
+  cursor: not-allowed;
+}
+li#mabina-class-input {
+  cursor: pointer;
+}
+
 span#auth-status {
     padding: 10px 15px;
     display: -moz-groupbox;

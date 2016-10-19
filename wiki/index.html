@@ -6,13 +6,13 @@
 		<meta charset="utf-8">
 		<!-- Auth0 Lock script -->
 		<!-- <script src="http://cdn.auth0.com/js/lock/10.3.0/lock.min.js"></script> -->
-		<script type="text/javascript" src="cdn/auth0lock.min.js"></script>
+		<!-- <script type="text/javascript" src="cdn/auth0lock.min.js"></script> -->
 
 		<script src="conf/auth0-variables.js"></script>
 		<script src="conf/app.js"></script>
 
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-		<link rel="stylesheet" type="text/css" href="cdn/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="cdn/other.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> -->
@@ -21,7 +21,6 @@
 		<!-- <link href="https://fonts.googleapis.com/css?family=Overlock|Overlock+SC" rel="stylesheet"> -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="cdn/flipclock.css">
 
 		<link rel="manifest" href="manifest.json">
 
@@ -40,7 +39,7 @@
 	</head>
 	<body style="position: relative; padding-top: 70px;" data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
 		
-
+	<!-- Auth0 Modal content-->
 		<div class="modal fade" id="myModalauth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -197,7 +196,9 @@
 		    </div>
 		  </div>
 		</div>
-
+		<!-- <script>
+			
+		</script> -->
 		<!-- Button trigger modal -->
 		<!-- <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">Model Popup</button> -->
 
@@ -229,8 +230,8 @@
 			        <li><a href="#todays-classes">Расписание</a></li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			            <li data-toggle="modal" data-target="#myModal" id="mabina-class-input" style="display: none;"><a href="#">Class Input</a></li>
+			          <ul class="dropdown-menu" id="sijui-dropdown">
+			            <li class="no-click" id="mabina-class-input"><a>Class Input</a></li>
 			            <!-- <li><a href="../ClassInput">Class Input</a></li> -->
 			            <!-- <li>
 							<button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">Model Popup</button>
@@ -303,7 +304,7 @@
 					    <div class="thumbnail">
 					    	<h2>Авиационный Английский</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="English Teacher pic" title="Авиационный Английский препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -313,7 +314,7 @@
 					    				<p> к.7 </p>
 					    			</div>
 					    		</div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="English Teacher pic" title="Авиационный Английский препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -387,7 +388,7 @@
 					    <div class="thumbnail">
 					    	<h2>БЖД</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/BZhDTeacher1.jpg" alt="BZD Teacher pic" title="БЖД препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -397,7 +398,7 @@
 					    				<p> 201, 301, 528 </p>
 					    			</div>
 					    		</div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="BZD Teacher pic" title="БЖД препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -431,7 +432,7 @@
 				    	<div class="thumbnail">
 					    	<h2>БИУС</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/BIUSTeacher.jpg" alt="BIUS Teacher pic" title="БИУС препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -465,7 +466,7 @@
 					    <div class="thumbnail">
 					    	<h2>Конструкция и Прочность АД</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/KADTeacher.jpg" alt="Kostruktisya AD Teacher pic" title="Конструкция и Прочность АД препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -500,7 +501,7 @@
 					    <div class="thumbnail">
 					    	<h2>Конструкция и Прочность ВС</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/KVSTeacher.jpg" alt="Kostruktisya VS Teacher pic" title="Конструкция и Прочность ВС препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -534,7 +535,7 @@
 					    <div class="thumbnail">
 					    	<h2>Методы Современных Диагностики</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="Metodi Diagnostiki Teacher pic" title="Методы Современных Диагностики препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -568,7 +569,7 @@
 					    <div class="thumbnail">
 					    	<h2>Теория АД</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="Teoriya AD Teacher pic" title="Теория АД препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -602,7 +603,7 @@
 					    <div class="thumbnail">
 					    	<h2>Теория Надежности</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="Teoriya Nadezhnosti Teacher pic" title="Теория Надежности препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -612,7 +613,7 @@
 					    				<p> 14 </p>
 					    			</div>
 					    		</div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="Teoriya Nadezhnosti Teacher pic" title="Теория Надежности препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -646,7 +647,7 @@
 					    <div class="thumbnail">
 					    	<h2>Физ-Культура</h2>
 					    	<div>
-					    		<div class="subject-meta">
+					    		<div class="subject-meta" style="display: none;">
 					    			<img src="Teachers/placeholder.jpg" alt="Fiz-Ra Teacher pic" title="Физ-Культура препод">
 					    			<div class="subject-meta-details">
 					    				<h4>Teacher:</h4>
@@ -758,12 +759,12 @@
 
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-		<script type="text/javascript" src="cdn/jquery.js"></script>
+		<!-- <script type="text/javascript" src="cdn/jquery.js"></script>
 		<script type="text/javascript" src="cdn/bootstrapmin.js"></script>
 		<script src="masonry.pkgd.min.js"></script>
-		<script src="cdn/flipclock.min.js"></script>
+		<script src="cdn/flipclock.min.js"></script> -->
 		<script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="tabletop.js"></script>
+		<!-- <script type="text/javascript" src="tabletop.js"></script> -->
 
 	</body>
 </html>
