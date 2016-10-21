@@ -8,7 +8,9 @@
 * [Class 006](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20006.md) Sept 21, 2016
 * [Class 007](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20007.md) Sept 26, 2016
 * [Class 008](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20008.md) Sept 27, 2016 Lab2
-* [Class 009](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20008.md) Oct 5, 2016 Practical
+* [Class 009](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20009.md) Oct 5, 2016 Practical
 * [Class 010](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20010.md) Oct 5, 2016
 * [Class 011](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20011.md) Oct 10, 2016
 * [Class 012](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20012.md) Oct 11, 2016
+* [Class 011](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20011.md) Oct 19, 2016 Practical
+* [Class 012](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20012.md) Oct 19, 2016
