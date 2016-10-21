@@ -10,3 +10,4 @@
 * [Class 007](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20007.md) Oct 5, 2016
 * [Class 008](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20008.md) Oct 6, 2016
 * [Class 009](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20009.md) Oct 11, 2016
+* [Class 010](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20010.md) Oct 19, 2016
