@@ -113,6 +113,7 @@ monthName[11] = "December";
 
 $('.todays-classes h3 #day').text(weekday[d.getDay()] + ', ' + monthName[d.getMonth()] + ' ' + d.getDate());
 
+var clocks;
 
 $(document).ready(function(){
 
@@ -195,7 +196,7 @@ $(document).ready(function(){
   $('.cprt-year #current-year').text(d.getFullYear());
 
   // The flip clock plugin for an awesome countdown timer.
-     var clocks = [];
+      clocks = [];
 
       // Grab the current date
       var currentDate = new Date();
@@ -223,7 +224,7 @@ $(document).ready(function(){
             }
         });
             
-        clock1.setTime(220880);
+        clock1.setTime(10);
         clock1.setCountdown(true);
         clock1.start();
         clocks.push(clock1);
@@ -376,3 +377,66 @@ navigator.serviceWorker && navigator.serviceWorker.ready.then(function(serviceWo
         });
     });
 });
+
+
+
+// Tabletop logic for displaying google spreadsheet data on the page
+window.onload = function() { tabletopInit() };
+
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1X9x-mx1jV1gaY6FcCy9SAxgoPefFydMdqCBPkUgm8WI&output=html';
+
+function tabletopInit() {
+	Tabletop.init( { key: public_spreadsheet_url,
+                 callback: showInfo,
+                 simpleSheet: true } )
+}
+
+function showInfo(data, tabletop) {
+	// alert("Successfully processed!");
+	// console.log(data);
+	for (var i = 0; i < data.length; i++) {
+		var date = data[i].Date;
+		var desc = data[i].Description;
+		var time = data[i].Time;
+	
+		// create a li elememt
+		var li = document.createElement('li');
+		var para = document.createElement('p');
+		var clockDiv = document.createElement('div');
+		clockDiv.className = 'clockNo'+i;
+
+		var deadlineDescription = document.createTextNode(desc);
+		para.appendChild(deadlineDescription);
+
+		li.appendChild(para);
+		li.appendChild(clockDiv);
+
+		var deadlineUL = document.getElementById("deadline-list");
+		deadlineUL.appendChild(li);
+
+		var dateList = date.split("-");
+		var timeList = time.split(":");
+
+        var now = new Date()
+        var deadlineTime = new Date(dateList[0], dateList[1]-1, dateList[2], timeList[0], timeList[1]);
+        var timeDiff = deadlineTime.getTime() - now.getTime()
+        var timeDiffSec = timeDiff/1000;
+            
+		if (timeDiffSec > 1) {	
+			clocks.push($('.clockNo'+i).FlipClock(timeDiffSec, {
+				clockFace: 'DailyCounter',
+				countdown: true,
+				showDays: false
+			}));
+		}else{
+			var endedText = "A deadline about " + desc + " was made for: " + date + ", at " + time + "."
+			var endedDeadlineText = document.createTextNode(endedText);
+			var paraEnded = document.createElement('p');
+			paraEnded.className = "paraEnded";
+			paraEnded.appendChild(endedDeadlineText);
+			clockDiv.appendChild(paraEnded);
+
+		}
+	}
+
+}
