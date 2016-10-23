@@ -201,6 +201,7 @@
 		  </div>
 		</div>
 		
+		<!-- Deadline input modal -->
 		<div class="modal fade" tabindex="-1" role="dialog" id="add-countdowns-modal">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -209,18 +210,27 @@
 		        <h4 class="modal-title">Add the date and time for the new deadline</h4>
 		      </div>
 		      <div class="modal-body">
-		        <form action="post" accept-charset="utf-8">
-					<label for="">
-						<input type="date" name="" >
+		        <form action="post" accept-charset="utf-8" id="deadline-input-form">
+		        	<label for="deadline-desc"> Short description
+						<input type="text" name="deadline-desc" id="deadline-desc">
 					</label>
-					<label for="">
-						<input type="time" name="" >
+					<label for="deadline-date"> Date
+						<input type="date" name="deadline-date" id="deadline-date">
+					</label>
+					<label for="deadline-time"> Time
+						<input type="time" name="deadline-time" id="deadline-time">
 					</label>
 		        </form>
+		        <div>
+					<p id="confirming-deadline" class="bg-success" style="display: none;">Form has been successfully submitted!</p>
+				</div>
+				<div>
+					<p id="remorse-deadline" class="bg-danger" style="display: none;">There was an issue while sending the form :( !</p>
+				</div>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
+		        <button type="button" class="btn btn-primary" id="modal-deadline-input-submit">Save changes</button>
 		      </div>
 		    </div><!-- /.modal-content -->
 		  </div><!-- /.modal-dialog -->
@@ -778,7 +788,7 @@
 			    	</div>
 			    	 <div class="col-md-12">
 		    			<div class="put-center">
-		    				<a class="go-to-full-timetable" href="/timetable/"> Check out <b>this week's</b> full timetable  </a> 
+		    				<a class="go-to-full-timetable" href="timetable/"> Check out <b>this week's</b> full timetable  </a> 
 		    			</div>
 				    </div>
 			    </div>

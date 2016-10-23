@@ -252,7 +252,7 @@ $(document).ready(function(){
       'Subject': $('#Subject').val(),
       'Class Number': $('#ClassNo').val(),
       'Date': new Date(),
-      'Uploader': Math.floor(Math.random() * 17),   //Change this later
+      'Uploader': globalUserName,
       'Link DOC': $('#DOCFileInput').val(),
       'Link MD': $('#MDFileInput').val(),
       'Link PDF': $('#PDFFileInput').val(),
@@ -268,12 +268,46 @@ $(document).ready(function(){
       success: showConfirmation,
       error: showRemorse
     });
+
+  //Form submission of Deadlines
+  $('#modal-deadline-input-submit').on('click', function(){
+    $("#deadline-input-form").trigger("submit");
+  });
+
+  $( "#deadline-input-form" ).submit(function( event ) {
+    event.preventDefault();
+    
+    var showConfirmation = function (data){
+      $('#confirming-deadline').fadeIn(320).delay(400).fadeOut(400);
+      $("#deadline-input-form").trigger('reset')
+    }
+
+    var showRemorse = function (data){
+      $('#remorse-deadline').fadeIn(320).delay(400).fadeOut(300);
+    }
+
+    var scriptUrl = "https://script.google.com/macros/s/AKfycbwPgBS7SbZZMlj2IVps_eXlPM1YDJkOKqUfsii7GPC1SgzIZ_Q/exec";
+    scriptUrl += '?' + $.param({
+      'Description': $('#deadline-desc').val(),
+      'Date': $('#deadline-date').val(),
+      'Time': $('#deadline-time').val(),
+      'Uploader': globalUserName
+    });
+    
+    $.ajax({
+      crossDomain: true,
+      url: scriptUrl,
+      method: "POST",
+      dataType: "jsonp",
+      success: showConfirmation,
+      error: showRemorse
+    });
   });
 
 });
 
 
-
+var globalUserName;
 // Mabina Auth procedures
 function onyeshamabina (profile) {
   $('span#not-inside').hide();
@@ -284,6 +318,7 @@ function onyeshamabina (profile) {
   }
   document.getElementById('avatar').src = profile.picture;
   document.getElementById('namemabina').textContent = titleCase(profile.name);
+  globalUserName = titleCase(profile.name);
 }
 
 
