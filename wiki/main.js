@@ -331,7 +331,7 @@ var showRemorse = function (data){
   $('#remorse-deadline').fadeIn(320).delay(400).fadeOut(300);
 }
 
-var scriptUrl = "https://script.google.com/macros/s/AKfycbwPgBS7SbZZMlj2IVps_eXlPM1YDJkOKqUfsii7GPC1SgzIZ_Q/exec";
+var scriptUrl = "https://script.google.com/macros/s/AKfycbzgLPRxproBSWAcF-1D2p5e4INqq6hbrefU3TZ-9NhqNe1AiTny/exec";
 scriptUrl += '?' + $.param({
   'Description': $('#deadline-desc').val(),
   'Date': $('#deadline-date').val(),
