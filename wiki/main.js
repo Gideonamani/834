@@ -224,7 +224,7 @@ $(document).ready(function(){
             }
         });
             
-        clock1.setTime(10);
+        clock1.setTime(600);
         clock1.setCountdown(true);
         clock1.start();
         clocks.push(clock1);
@@ -385,9 +385,14 @@ window.onload = function() { tabletopInit() };
 
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1X9x-mx1jV1gaY6FcCy9SAxgoPefFydMdqCBPkUgm8WI&output=html';
 
+var public_spreadsheet_url_two = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1U01hiw-gj9JM3lG50Tb57_CqlrbiOnB_X4OfHWyq95I&output=html';
+
 function tabletopInit() {
 	Tabletop.init( { key: public_spreadsheet_url,
                  callback: showInfo,
+                 simpleSheet: true } )
+	Tabletop.init( { key: public_spreadsheet_url_two,
+                 callback: showNotesInfo,
                  simpleSheet: true } )
 }
 
@@ -440,3 +445,67 @@ function showInfo(data, tabletop) {
 	}
 
 }
+
+function showNotesInfo(data, tabletop) {
+	subjectDict = {
+		"Авиационный Английский": "CourseEnglish",
+		"БЖД": "CourseBZhD",
+		"БИУС": "CourseBIUS",
+		"Методы Современных Диагностики": "CourseKAD",
+		"Конструкция и Прочность ВС": "CourseKVS",
+		"Конструкция и Прочность АД": "CourseMCD",
+		"Теория АД": "CourseTAD",
+		"Теория Надежности": "CourseTN",
+		"Физ-Культура": "CourseFizRa"
+	}
+	//for each row
+	for (var i = 0; i < data.length; i++) {
+		var predmet = data[i]["Subject"];
+		var concernedID = subjectDict[predmet];
+
+		var div;
+		var predmetDiv;
+		var SubContentDiv;
+
+		if ($('#'+ concernedID + ' .subject-content .class-list').length == 0) {
+			//if the class list doesn't exist, create it here
+			console.log("Hello");
+			$('#'+ concernedID + ' .subject-content').append(
+				"<div class='class-list'></div>"
+			)
+		}
+
+		classListDiv = $('#'+ concernedID + ' .subject-content .class-list');
+		//Append to the class list a panel div
+		classListDiv.append(
+
+			"<div class='aclass panel panel-default'>" +
+				"<div class='panel-heading'><p> Class Number "+ data[i]["Class Number"] + "</p></div>" +
+				"<div class='panel-body'>" +
+				"</div>" +
+			"</div>"
+		);
+
+		classListDiv.insertBefore($('#'+ concernedID + ' .subject-content a'));
+
+		// then the panel body with buttons for each format
+
+	}
+
+	// Refresh the grid layout!!
+	$grid.masonry()	
+
+}
+
+// <div class="aclass panel panel-default">
+// 	<div class="panel-heading"><p>Class 001</p></div>
+// 	<div class="panel-body">
+// 		<button class="btn btn-default link-to-lec">MD</button>
+// 		<button class="btn btn-default link-to-lec">PDF</button>
+// 		<button class="btn btn-default link-to-lec">DOC</button>
+// 		<button class="btn btn-default link-to-lec">AUDIO</button>
+// 		<button class="btn btn-default link-to-lec">AUDIO</button>
+// 		<button class="btn btn-default link-to-lec">AUDIO</button>
+// 		<button class="btn btn-default link-to-lec">AUDIO</button>
+// 	</div>
+// </div>
