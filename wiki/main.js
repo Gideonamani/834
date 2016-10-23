@@ -229,8 +229,52 @@ $(document).ready(function(){
         clocks.push(clock1);
 
 
+});
 
-  //Form submission of classes VALIDATION
+
+var globalUserName;
+// Mabina Auth procedures
+function onyeshamabina (profile) {
+  $('span#not-inside').hide();
+  $('span#inside-app').show();
+
+  function titleCase(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  document.getElementById('avatar').src = profile.picture;
+  document.getElementById('namemabina').textContent = titleCase(profile.name);
+  globalUserName = titleCase(profile.name);
+}
+
+
+$("#mabina-class-input").click(function(){
+	if(!$("#mabina-class-input").hasClass('no-click')) {
+		$("#myModal").modal("show");
+	}
+});
+
+$("#add-countdowns-button").click(function(){
+	if(!$("#add-countdowns-button").hasClass('no-click')) {
+		$("#add-countdowns-modal").modal("show");
+	}
+});
+
+function showClassInput() {
+  $('#mabina-class-input').removeClass('no-click');
+  $('#add-countdowns-button').removeClass('no-click');
+  $('.subject-meta').show();
+  $grid.masonry();
+}
+
+function removeClassInput() {
+  $('#mabina-class-input').addClass('no-click');
+  $('#add-countdowns-button').addClass('no-click');
+  $('.subject-meta').hide();
+  $grid.masonry();
+}
+
+
+//Form submission of classes VALIDATION
   $('#modal-classinput-submit').on('click', function(){
     $("#fillthesheet").trigger("submit");
   });
@@ -303,50 +347,6 @@ $(document).ready(function(){
       error: showRemorse
     });
   });
-
-});
-
-
-var globalUserName;
-// Mabina Auth procedures
-function onyeshamabina (profile) {
-  $('span#not-inside').hide();
-  $('span#inside-app').show();
-
-  function titleCase(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  document.getElementById('avatar').src = profile.picture;
-  document.getElementById('namemabina').textContent = titleCase(profile.name);
-  globalUserName = titleCase(profile.name);
-}
-
-
-$("#mabina-class-input").click(function(){
-	if(!$("#mabina-class-input").hasClass('no-click')) {
-		$("#myModal").modal("show");
-	}
-});
-
-$("#add-countdowns-button").click(function(){
-	if(!$("#add-countdowns-button").hasClass('no-click')) {
-		$("#add-countdowns-modal").modal("show");
-	}
-});
-
-function showClassInput() {
-  $('#mabina-class-input').removeClass('no-click');
-  $('#add-countdowns-button').removeClass('no-click');
-  $('.subject-meta').show();
-  $grid.masonry();
-}
-
-function removeClassInput() {
-  $('#mabina-class-input').addClass('no-click');
-  $('#add-countdowns-button').addClass('no-click');
-  $('.subject-meta').hide();
-  $grid.masonry();
-}
 
 
 // Service worker registration
