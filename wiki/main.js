@@ -476,20 +476,29 @@ function showNotesInfo(data, tabletop) {
 		}
 
 		classListDiv = $('#'+ concernedID + ' .subject-content .class-list');
+
+		// then the panel body with buttons for each format
+		var formatList = ["DOC", "MD", "PDF", "AUDIO", "VIDEO"];
+		var someLinks = "";
+		for (var j = 0; j < formatList.length; j++) {
+			// if the format link isnot empty then append it to the dom.
+			var theURL = data[i]["Link " + formatList[j]]
+			if (theURL != "") {
+				someLinks += "<button class='btn btn-default link-to-lec'><a href=" + theURL + " >" + formatList[j] + "</a></button>";
+			}
+		}
+
 		//Append to the class list a panel div
 		classListDiv.append(
 
 			"<div class='aclass panel panel-default'>" +
 				"<div class='panel-heading'><p> Class Number "+ data[i]["Class Number"] + "</p></div>" +
-				"<div class='panel-body'>" +
+				"<div class='panel-body'>" + someLinks +
 				"</div>" +
 			"</div>"
 		);
 
-		classListDiv.insertBefore($('#'+ concernedID + ' .subject-content a'));
-
-		// then the panel body with buttons for each format
-
+		classListDiv.insertBefore($('#'+ concernedID + ' .subject-content a.to-github'));
 	}
 
 	// Refresh the grid layout!!
@@ -497,15 +506,4 @@ function showNotesInfo(data, tabletop) {
 
 }
 
-// <div class="aclass panel panel-default">
-// 	<div class="panel-heading"><p>Class 001</p></div>
-// 	<div class="panel-body">
-// 		<button class="btn btn-default link-to-lec">MD</button>
-// 		<button class="btn btn-default link-to-lec">PDF</button>
-// 		<button class="btn btn-default link-to-lec">DOC</button>
-// 		<button class="btn btn-default link-to-lec">AUDIO</button>
-// 		<button class="btn btn-default link-to-lec">AUDIO</button>
-// 		<button class="btn btn-default link-to-lec">AUDIO</button>
-// 		<button class="btn btn-default link-to-lec">AUDIO</button>
-// 	</div>
-// </div>
+//save the google spreadsheet data to localstorage!!
