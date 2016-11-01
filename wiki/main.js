@@ -447,6 +447,9 @@ function showInfo(data, tabletop) {
 }
 
 function showNotesInfo(data, tabletop) {
+	// Save the JSON data to the localstorage
+	saveJSON(data);
+
 	subjectDict = {
 		"Авиационный Английский": "CourseEnglish",
 		"БЖД": "CourseBZhD",
@@ -507,3 +510,11 @@ function showNotesInfo(data, tabletop) {
 }
 
 //save the google spreadsheet data to localstorage!!
+function saveJSON (obj) {
+		localStorage["Mabina834"] = JSON.stringify(obj);
+};
+
+function loadJSON (){
+  	return JSON.parse(localStorage["Mabina834"]);
+};
+
