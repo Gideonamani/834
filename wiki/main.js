@@ -214,20 +214,21 @@ $(document).ready(function(){
         showDays: false
       }));
 
-      clock1 = $('.clock1').FlipClock({
-            clockFace: 'DailyCounter',
-            autoStart: false,
-            callbacks: {
-              stop: function() {
-                $('.message').html('The clock has stopped!')
-              }
-            }
-        });
+      // // The debug for deadline clocks
+      // clock1 = $('.clock1').FlipClock({
+      //       clockFace: 'DailyCounter',
+      //       autoStart: false,
+      //       callbacks: {
+      //         stop: function() {
+      //           $('.message').html('The clock has stopped!')
+      //         }
+      //       }
+      //   });
             
-        clock1.setTime(600);
-        clock1.setCountdown(true);
-        clock1.start();
-        clocks.push(clock1);
+      //   clock1.setTime(20);
+      //   clock1.setCountdown(true);
+      //   clock1.start();
+      //   clocks.push(clock1);
 
 
 });
@@ -404,7 +405,7 @@ function showInfo(data, tabletop) {
 				showDays: false
 			}));
 		}else{
-			var endedText = "A deadline about " + desc + " was made for: " + date + ", at " + time + "."
+			var endedText = "This deadline was made for: " + date + ", at " + time + "."
 			var endedDeadlineText = document.createTextNode(endedText);
 			var paraEnded = document.createElement('p');
 			paraEnded.className = "paraEnded";
