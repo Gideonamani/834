@@ -322,24 +322,32 @@ $('#modal-deadline-input-submit').on('click', function(){
 });
 
 $( "#deadline-input-form" ).submit(function( event ) {
-event.preventDefault();
+  event.preventDefault();
+	var ddDate = $('#deadline-date').val();
+	var ddDesc = $('#deadline-desc').val();
+	var ddTime = $('#deadline-time').val();
+	var ddUploader = globalUserName;
 
-var showConfirmation = function (data){
+	var ddData = {
+	  'Description': ddDesc,
+	  'Date': ddDate,
+	  'Time': ddTime,
+	  'Uploader': globalUserName 	
+	}
+
+var showConfirmation = function (){
   $('#confirming-deadline').fadeIn(320).delay(400).fadeOut(400);
   $("#deadline-input-form").trigger('reset');
+  // Update the DOM to contain the new clock
+  updateTheDOMWithClock(ddData);
 }
 
-var showRemorse = function (data){
+var showRemorse = function (){
   $('#remorse-deadline').fadeIn(320).delay(400).fadeOut(300);
 }
 
 var scriptUrl = "https://script.google.com/macros/s/AKfycbzgLPRxproBSWAcF-1D2p5e4INqq6hbrefU3TZ-9NhqNe1AiTny/exec";
-scriptUrl += '?' + $.param({
-  'Description': $('#deadline-desc').val(),
-  'Date': $('#deadline-date').val(),
-  'Time': $('#deadline-time').val(),
-  'Uploader': globalUserName
-});
+scriptUrl += '?' + $.param(ddData);
 
 $.ajax({
   crossDomain: true,
@@ -351,7 +359,50 @@ $.ajax({
   });
 });
 
+function updateTheDOMWithClock(data) {
+	var date = data.Date;
+	var desc = data.Description;
+	var time = data.Time;
 
+	// create a li elememt
+	var li = document.createElement('li');
+	var para = document.createElement('p');
+	var clockDiv = document.createElement('div');
+	clockDiv.className = 'clockNo'+clocks.length;
+
+	var deadlineDescription = document.createTextNode(desc);
+	para.appendChild(deadlineDescription);
+
+	li.appendChild(para);
+	li.appendChild(clockDiv);
+
+	var deadlineUL = document.getElementById("deadline-list");
+	deadlineUL.appendChild(li);
+
+	var dateList = date.split("-");
+	var timeList = time.split(":");
+
+    var now = new Date()
+    var deadlineTime = new Date(dateList[0], dateList[1]-1, dateList[2], timeList[0], timeList[1]);
+    var timeDiff = deadlineTime.getTime() - now.getTime()
+    var timeDiffSec = timeDiff/1000;
+        
+	if (timeDiffSec > 1) {	
+		clocks.push($('.clockNo'+clocks.length).FlipClock(timeDiffSec, {
+			clockFace: 'DailyCounter',
+			countdown: true,
+			showDays: false
+		}));
+	}else{
+		var endedText = "This deadline was made for: " + date + ", at " + time + "."
+		var endedDeadlineText = document.createTextNode(endedText);
+		var paraEnded = document.createElement('p');
+		paraEnded.className = "paraEnded";
+		paraEnded.appendChild(endedDeadlineText);
+		clockDiv.appendChild(paraEnded);
+
+	}
+}
 
 // Tabletop logic for displaying google spreadsheet data on the page
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1X9x-mx1jV1gaY6FcCy9SAxgoPefFydMdqCBPkUgm8WI&output=html';
