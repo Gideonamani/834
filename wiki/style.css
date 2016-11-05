@@ -184,12 +184,18 @@ div .thumbnail a.to-github:hover{
 .class-list .panel .panel-body button {
   width: 50px;
   padding: 5px 2px;
-  margin-bottom: 2px;
+  margin: 0 2.5px 2px;
 }
 
 .class-list .panel .panel-body button.btn {
   font-size: 9pt;
 }
+
+.class-list .panel .panel-body button a {
+  color: #0d47a1;
+  font-weight: 400px;
+}
+
 
 /*For scrolling purposes*/
 div#Home, div#Spisok, div#countdowns , div#todays-classes {
