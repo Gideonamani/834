@@ -106,7 +106,7 @@ $(document).ready(function(){
             "class": "todays-subjects",
             html: items[dayOfTheWeek].join( "" ),
           }).appendTo( "div.todays-classes div.todays-classes-2:last" );
-        $('div.row.todays-classes:last').slideDown(1800);
+        $('div.row.todays-classes:last').slideDown(300);
       }
       else{
         if(weekday[dayOfTheWeek] == "Saturday"){
