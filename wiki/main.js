@@ -68,7 +68,7 @@ var $grid = $('.grid').masonry({
 });
 
 $('.subject-meta').hide();
-$grid.masonry()
+$grid.masonry();
 
 
 Date.prototype.getWeek = function () {
@@ -276,44 +276,64 @@ function removeClassInput() {
 }
 
 
-//Form submission of classes VALIDATION
+//Form submission of classes 
+// TO DO 
+// 1. VALIDATION
 $('#modal-classinput-submit').on('click', function(){
 	$("#fillthesheet").trigger("submit");
 });
 
 $( "#fillthesheet" ).submit(function( event ) {
-event.preventDefault();
+	event.preventDefault();
 
-var showConfirmation = function (data){
-  $('#confirming').fadeIn(320).delay(800).fadeOut(400);
-  $("#fillthesheet").trigger('reset')
-}
+	var BLAH1 = $('#Subject').val();
+	var BLAH2 = $('#ClassNo').val();
+	var BLAH3 = new Date();
+	var BLAH4 = globalUserName;
+	var BLAH5 = $('#DOCFileInput').val();
+	var BLAH6 = $('#MDFileInput').val();
+	var BLAH7 = $('#PDFFileInput').val();
+	var BLAH8 = $('#AudioFileInput').val();
+	var BLAH9 = $('#VideoFileInput').val();
 
-var showRemorse = function (data){
-  $('#remorse').fadeIn(320).delay(1000).fadeOut(300);
-}
+	var NotesData = {
+		'Subject': BLAH1,
+		'Class Number': BLAH2,
+		'Date': BLAH3,
+		'Uploader': BLAH4,
+		'Link DOC': BLAH5,
+		'Link MD': BLAH6,
+		'Link PDF': BLAH7,
+		'Link AUDIO': BLAH8,
+		'Link VIDEO': BLAH9
+		};
 
-var scriptUrl = "https://script.google.com/macros/s/AKfycbwPgBS7SbZZMlj2IVps_eXlPM1YDJkOKqUfsii7GPC1SgzIZ_Q/exec";
-scriptUrl += '?' + $.param({
-  'Subject': $('#Subject').val(),
-  'Class Number': $('#ClassNo').val(),
-  'Date': new Date(),
-  'Uploader': globalUserName,
-  'Link DOC': $('#DOCFileInput').val(),
-  'Link MD': $('#MDFileInput').val(),
-  'Link PDF': $('#PDFFileInput').val(),
-  'Link AUDIO': $('#AudioFileInput').val(),
-  'Link VIDEO': $('#VideoFileInput').val()
-});
+	var showConfirmation = function (){
+		//Update the notes
+		notesDataManipulator (NotesData);
 
-$.ajax({
-  crossDomain: true,
-  url: scriptUrl,
-  method: "POST",
-  dataType: "jsonp",
-  success: showConfirmation,
-  error: showRemorse
-  });
+		// refresh the masonry grid
+		$grid.masonry();
+
+		$('#confirming').fadeIn(320).delay(800).fadeOut(400);
+		$("#fillthesheet").trigger('reset');
+	}
+
+	var showRemorse = function (){
+		$('#remorse').fadeIn(320).delay(1000).fadeOut(300);
+	}
+
+	var scriptUrl = "https://script.google.com/macros/s/AKfycbwPgBS7SbZZMlj2IVps_eXlPM1YDJkOKqUfsii7GPC1SgzIZ_Q/exec";
+	scriptUrl += '?' + $.param( NotesData );
+
+	$.ajax({
+		crossDomain: true,
+		url: scriptUrl,
+		method: "POST",
+		dataType: "jsonp",
+		success: showConfirmation,
+		error: showRemorse
+	});
 });
 
 //Form submission of Deadlines
@@ -468,9 +488,12 @@ function showInfo(data, tabletop) {
 
 }
 
-function showNotesInfo(data, tabletop) {
-	// Save the JSON data to the localstorage
-	saveJSON(data);
+function notesDataManipulator (data) {
+	if (!Array.isArray(data)) {
+		var holder = [];
+		holder.push(data);
+		data = holder;
+	}
 
 	subjectDict = {
 		"Авиационный Английский": "CourseEnglish",
@@ -496,7 +519,7 @@ function showNotesInfo(data, tabletop) {
 			//if the class list doesn't exist, create it here
 			$('#'+ concernedID + ' .subject-content').append(
 				"<div class='class-list'></div>"
-			)
+			);
 		}
 
 		classListDiv = $('#'+ concernedID + ' .subject-content .class-list');
@@ -507,7 +530,7 @@ function showNotesInfo(data, tabletop) {
 		for (var j = 0; j < formatList.length; j++) {
 			// if the format link isnot empty then append it to the dom.
 			var theURL = data[i]["Link " + formatList[j]]
-			if (theURL != "") {
+			if (theURL != "" && theURL != undefined) {
 				someLinks += "<button class='btn btn-default link-to-lec'><a href=" + theURL + " >" + formatList[j] + "</a></button>";
 			}
 		}
@@ -526,8 +549,13 @@ function showNotesInfo(data, tabletop) {
 	}
 
 	// Refresh the grid layout!!
-	$grid.masonry()	
+	$grid.masonry();
+}
 
+function showNotesInfo(data, tabletop) {
+	// Save the JSON data to the localstorage
+	saveJSON(data);
+	notesDataManipulator (data);
 }
 
 //save the google spreadsheet data to localstorage!!
