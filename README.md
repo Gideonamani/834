@@ -35,3 +35,7 @@ The organised more readable version of all the content in this folder is set to 
  This repository has been 100% inspired by:
  * [Daniel Shiffman](http://shiffman.net/) and the current ongoing [Fall 2016 Programming from A to Z](https://github.com/shiffman/A2Z-F16) course.
  * [Andreas Weigend](http://www.weigend.com/) and the also wonderful ongoing [Social Data Revolution](https://sdr2016.wikispaces.com/) course.
+ 
+```
+#Anti-TeleprompterLectures
+```

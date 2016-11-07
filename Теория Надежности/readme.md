@@ -14,3 +14,4 @@
 * [Class 012](https://github.com/Gideonamani/834/blob/gh-pages/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8/Class%20012.md) **Михалев** Oct 24, 2016
 * [Class 013](https://github.com/Gideonamani/834/blob/gh-pages/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8/Class%20013.md) **_Капралов_** Oct 28, 2016 Last
 * [Class 014](https://github.com/Gideonamani/834/blob/gh-pages/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8/Class%20014.md) **Михалев** Nov 2, 2016
+* [Class 015](https://github.com/Gideonamani/834/blob/gh-pages/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8/Class%20015.md) **Михалев** Nov 7, 2016

@@ -18,3 +18,4 @@
 * [Class 014](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20014.md) Oct 25, 2016 Lab 3
 * [Class 015](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20015.md) Nov 2, 2016 Practical
 * [Class 016](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20016.md) Nov 2, 2016
+* [Class 017](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20017.md) Nov 7, 2016
