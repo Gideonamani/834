@@ -20,5 +20,5 @@
 * [Class 016](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20016.md) Nov 2, 2016
 * [Class 017](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20017.md) Nov 7, 2016
 * [Class 018](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20018.md) Nov 7, 2016
-* [Class 019](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20019.md) Nov 2, 2016 Practical
-* [Class 020](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20020.md) Nov 2, 2016
+* [Class 019](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20019.md) Nov 16, 2016 Practical
+* [Class 020](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%96%D0%94/Class%20020.md) Nov 16, 2016
