@@ -17,3 +17,4 @@
 * [Class 014](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20014.md) Nov 3, 2016
 * [Class 015](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20015.md) Nov 8, 2016
 * [Class 016](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20016.md) Nov 16, 2016
+* [Class 017](https://github.com/Gideonamani/834/blob/gh-pages/%D0%91%D0%98%D0%A3%D0%A1/Class%20017.md) Nov 17, 2016
