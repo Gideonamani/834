@@ -41,7 +41,7 @@ monthName[11] = "December";
 
 $(document).ready(function(){
   //Populate the classes fields
-  $.getJSON( "UniSem07Timetable.json", fillInTheTimetable);
+  $.getJSON( "UniSem08Timetable.json", fillInTheTimetable);
 
   function fillInTheTimetable ( data ) {
     var items = [];
@@ -82,6 +82,7 @@ $(document).ready(function(){
               "</li>"
               ); 
           }else{ 
+            if(i===0){items[dayOfTheWeek] = [];} 
             items[dayOfTheWeek].push("<li class='somo-la-leo free-para'> Free to Party !!! </li>");
           }        
         }
