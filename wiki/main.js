@@ -117,7 +117,7 @@ var clocks;
 
 $(document).ready(function(){
 
-  $.getJSON( "UniSem07Timetable.json", function( data ) {
+  $.getJSON( "UniSem08Timetable.json", function( data ) {
     var items = [];
     var weekNumber;
 
