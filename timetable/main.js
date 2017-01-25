@@ -39,9 +39,11 @@ monthName[10] = "November";
 monthName[11] = "December";
 
 
+var JSONTimetable = "UniSem08Timetable.json"
+
 $(document).ready(function(){
   //Populate the classes fields
-  $.getJSON( "UniSem08Timetable.json", fillInTheTimetable);
+  $.getJSON( JSONTimetable, fillInTheTimetable);
 
   function fillInTheTimetable ( data ) {
     var items = [];
@@ -95,7 +97,7 @@ $(document).ready(function(){
             "class": "todays-subjects",
             html: items[dayOfTheWeek].join( "" ),
           }).appendTo( "div.todays-classes div.todays-classes-2:last" );
-        $('div.row.todays-classes:last').slideDown(1800);
+        $('div.row.todays-classes:last').slideDown(180);
       }
       else{
         if(weekday[dayOfTheWeek] == "Saturday"){
@@ -171,7 +173,7 @@ $(document).ready(function(){
             var dayOfTheWeek = gtdDate.getDay();
             metaForTheDaysClasses(gtdDate, dayOfTheWeek, weekNumber, '#go-to-date-div .row2', 'removeIcon');
             
-            $.getJSON( "UniSem07Timetable.json", getDaysTimetable);
+            $.getJSON( JSONTimetable, getDaysTimetable);
 
             function getDaysTimetable(data){
 
@@ -197,7 +199,7 @@ $(document).ready(function(){
 
 
 function metaForTheDaysClasses (date, dayN, weeknumber, domPlacement, removeIcon){
-  var l1 = '<div class="row todays-classes no-display"><div class="col-md-10 col-md-offset-1 todays-classes-2">';
+  var l1 = '<div id="' + weekday[dayN] + '" class="row todays-classes no-display"><div class="col-md-10 col-md-offset-1 todays-classes-2">';
   var l2 = '';
   var l3 = '<h3>This is a <span class="day">' + weekday[dayN] + '</span>' + ' of the ' + weeknumber + ' </h3>';
   var l4 = '<h3>' + monthName[date.getMonth()] + ', ' + date.getDate() + '</h3>' + '</div> </div>';
