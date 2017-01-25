@@ -136,8 +136,8 @@ $(document).ready(function(){
       
       $('.input-group.date').datepicker({
         format: "dd/mm/yyyy",
-        startDate: "01-09-2016",
-        endDate: "31-12-2016",
+        startDate: "16-01-2017",
+        endDate: "31-06-2017",
           maxViewMode: 1,
           clearBtn: true,
           autoclose: true,
